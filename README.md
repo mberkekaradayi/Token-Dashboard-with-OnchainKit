@@ -1,6 +1,5 @@
 # Token Dashboard with OnchainKit
-
-A Next.js application that allows users to view their Base Network token balances using OnchainKit and Alchemy SDK.
+This project is a Web3 dashboard built using **Coinbase OnchainKit** and Alchemy SDK to showcase onchain identity, wallet authentication, and real-time fetching of ERC-20 token balances on the** Base Network**. It allows users to connect their wallets and view their token balances with features like sorting, pagination, and responsive design. The dashboard provides an intuitive and visually appealing interface, built with React and TailwindCSS, incorporating functionalities such as skeleton loaders, dark mode, and seamless token data visualization. It’s designed to enhance user experience while demonstrating modern blockchain and Web3 integration techniques.
 
 ## Features
 
@@ -28,10 +27,13 @@ Before you begin, you'll need to obtain the following API keys:
 Create a `.env` file in the root directory and add the following variables:
 
 ```env
-NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_onchainkit_api_key_here
-NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_api_key_here
 NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME="OnchainKit Token Dashboard"
+NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_onchainkit_api_key_here
+NEXT_PUBLIC_ONCHAINKIT_WALLET_CONFIG=smartWalletOnly
+NEXT_PUBLIC_BASESCAN_API_KEY=your_basescan_api_key_here
+NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_api_key_here 
 ```
+
 
 You can copy the `.env.example` file and replace the values with your actual API keys.
 
