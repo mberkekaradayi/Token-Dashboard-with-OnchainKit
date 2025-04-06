@@ -8,6 +8,13 @@ import { Footer } from "../components/footer";
 import ImageSvg from "../svg/Image";
 import { Address } from "@coinbase/onchainkit/identity";
 import { useRouter } from "next/navigation";
+import { BiSortAlt2 } from "react-icons/bi";
+import {
+  FiChevronUp,
+  FiChevronDown,
+  FiChevronLeft,
+  FiChevronRight,
+} from "react-icons/fi";
 
 export default function Dashboard() {
   const { address, isConnected } = useAccount();
@@ -97,8 +104,13 @@ export default function Dashboard() {
             onClick={toggleSort}
             className="px-4 py-2 text-sm border border-gray-200 rounded-md transition-all duration-200 hover:bg-white/10 hover:border-gray-300 flex items-center gap-2"
           >
+            <BiSortAlt2 size={18} />
             Sort by Quantity
-            <span className="text-xs">{sortOrder === "asc" ? "↑" : "↓"}</span>
+            {sortOrder === "asc" ? (
+              <FiChevronUp size={16} />
+            ) : (
+              <FiChevronDown size={16} />
+            )}
           </button>
         </div>
 
@@ -126,8 +138,9 @@ export default function Dashboard() {
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="px-4 py-2 border border-gray-200 rounded-md transition-all duration-200 hover:bg-white/10 hover:border-gray-300 disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:border-gray-200"
+              className="px-4 py-2 border border-gray-200 rounded-md transition-all duration-200 hover:bg-white/10 hover:border-gray-300 disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:border-gray-200 flex items-center gap-1"
             >
+              <FiChevronLeft size={16} />
               Previous
             </button>
             <span className="mx-2">
@@ -138,9 +151,10 @@ export default function Dashboard() {
                 setCurrentPage((prev) => Math.min(prev + 1, totalPages))
               }
               disabled={currentPage === totalPages}
-              className="px-4 py-2 border border-gray-200 rounded-md transition-all duration-200 hover:bg-white/10 hover:border-gray-300 disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:border-gray-200"
+              className="px-4 py-2 border border-gray-200 rounded-md transition-all duration-200 hover:bg-white/10 hover:border-gray-300 disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:border-gray-200 flex items-center gap-1"
             >
               Next
+              <FiChevronRight size={16} />
             </button>
           </div>
         )}
@@ -157,6 +171,7 @@ export default function Dashboard() {
             <h1 className="text-3xl font-bold">Dashboard</h1>
             <ImageSvg className="w-12 h-12" />
           </div>
+
           {renderContent()}
         </div>
       </div>
