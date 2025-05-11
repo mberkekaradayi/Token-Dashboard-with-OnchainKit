@@ -12,11 +12,9 @@ This project is a Web3 dashboard built using **Coinbase OnchainKit** and Alchemy
 
 Before you begin, you'll need to obtain the following API keys:
 
-1. **OnchainKit API Key**
-
-   - Sign up at [OnchainKit](https://onchainkit.xyz)
-   - Create a new project to get your API key
-
+1. **Client API Key**
+   - Get your [Client API](https://portal.cdp.coinbase.com/projects/api-keys/client-key) Key from Coinbase Developer Platform.
+     
 2. **Alchemy API Key**
    - Create an account at [Alchemy](https://dashboard.alchemy.com)
    - Create a new project on Base Network
